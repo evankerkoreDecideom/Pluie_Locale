@@ -5,15 +5,15 @@ Created on Fri May 19 09:36:08 2023
 @author: Decideom
 """
 
-import datatime
+import datetime as dt
 
 entete_csv = "id;date;annee;mois;jour\n"
 nb_annee = 20
-date_debut = datetime(2019,1,1,0,0,0)
+date_debut = dt.datetime(2019,1,1,0,0,0)
 path_output = "C:\\GitHub\Pluie_Locale\\Data\\Cibles\\temporalite.csv"
 
 def get_date_inc(date, inc):
-    return date + timedelta(inc)
+    return date + dt.timedelta(inc)
 
 def get_date_format(date):
     return str(date.strftime('%d/%m/%Y'))[0:10]
