@@ -5,7 +5,7 @@ Created on Fri May 19 13:09:58 2023
 @author: Decideom
 """
 
-import pandas as pd
+import pandas
 
 folder_input = "C:\\GitHub\\Pluie_Locale\\Data\\Sources\\"
 folder_output = "C:\\GitHub\\Pluie_Locale\\Data\\Cibles\\"
@@ -18,7 +18,7 @@ entete_csv = "id_personne;id_temporalite;valeur\n"
 ligne_fait = ""
 
 def get_df_from_csv(path_input, filename_output):
-    return pd.read_csv(path_input + filename_output, sep=';')
+    return pandas.read_csv(path_input + filename_output, sep=';')
 
 personne_df = get_df_from_csv(folder_output, personne_filename_input)
 temporalite_df = get_df_from_csv(folder_output, temporalite_filename_input)

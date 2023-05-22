@@ -5,7 +5,7 @@ Spyder Editor
 This is a temporary script file.
 """
 
-import pandas as pd
+import pandas
 
 path_googlesheet = "C:\\GitHub\\Pluie_Locale\\Secrets\\GoogleSheetID.txt"
 transco_filename = "transco_user_personne.csv"
@@ -15,7 +15,7 @@ folder_input = "C:\\GitHub\\Pluie_Locale\\Data\\Sources\\"
 folder_output = "C:\\GitHub\\Pluie_Locale\\Data\\Cibles\\"
 
 def get_transco_in_df(path_input):
-    return pd.read_csv(path_input, sep=';')
+    return pandas.read_csv(path_input, sep=';')
 
 def get_liste_onglet(df):
     return df["onglet"]
@@ -34,5 +34,5 @@ for onglet in get_liste_onglet(transco_df):
     url = 'https://docs.google.com/spreadsheets/d/{0}/gviz/tq?tqx=out:csv&sheet={1}'.format(
     	googleSheetId,
     	onglet)
-    data_df = pd.read_csv(url)[["date", "valeur"]]
+    data_df = pandas.read_csv(url)[["date", "valeur"]]
     data_df.to_csv(folder_input + onglet + ".csv", sep=";", index=False)

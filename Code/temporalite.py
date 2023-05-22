@@ -5,7 +5,7 @@ Created on Fri May 19 09:36:08 2023
 @author: Decideom
 """
 
-from datetime import datetime, timedelta
+import datatime
 
 entete_csv = "id;date;annee;mois;jour\n"
 nb_annee = 20

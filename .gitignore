@@ -1,3 +1,17 @@
 Secrets
 
+Code/build
+
+Code/*.spec
+
+VirtualEnv/Include
+
+VirtualEnv/Lib
+
+VirtualEnv/Scripts
+
+VirtualEnv/pyvenv.cfg
+
 *.csv
+
+*.cfg
