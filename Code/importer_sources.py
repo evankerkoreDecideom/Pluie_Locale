@@ -7,12 +7,12 @@ This is a temporary script file.
 
 import pandas as pd
 
-path_googlesheet = "C:\\GitHub\\Secrets\\GoogleSheetID.txt"
+path_googlesheet = "C:\\GitHub\\Pluie_Locale\\Secrets\\GoogleSheetID.txt"
 transco_filename = "transco_user_personne.csv"
 
 fait_entete_csv = "id_personne;id_temporalite;valeur\n"
-folder_input = "C:\\GitHub\\Data\\Sources\\"
-folder_output = "C:\\GitHub\\Data\\Cibles\\"
+folder_input = "C:\\GitHub\\Pluie_Locale\\Data\\Sources\\"
+folder_output = "C:\\GitHub\\Pluie_Locale\\Data\\Cibles\\"
 
 def get_transco_in_df(path_input):
     return pd.read_csv(path_input, sep=';')

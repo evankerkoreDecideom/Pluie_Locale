@@ -7,8 +7,8 @@ Created on Fri May 19 13:09:58 2023
 
 import pandas as pd
 
-folder_input = "C:\\GitHub\\Data\\Sources\\"
-folder_output = "C:\\GitHub\\Data\\Cibles\\"
+folder_input = "C:\\GitHub\\Pluie_Locale\\Data\\Sources\\"
+folder_output = "C:\\GitHub\\Pluie_Locale\\Data\\Cibles\\"
 
 personne_filename_input = "transco_user_personne.csv"
 temporalite_filename_input = "temporalite.csv"

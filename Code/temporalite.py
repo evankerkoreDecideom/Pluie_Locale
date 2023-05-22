@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 entete_csv = "id;date;annee;mois;jour\n"
 nb_annee = 20
 date_debut = datetime(2019,1,1,0,0,0)
-path_output = "C:\\GitHub\\Data\\Cibles\\temporalite.csv"
+path_output = "C:\\GitHub\Pluie_Locale\\Data\\Cibles\\temporalite.csv"
 
 def get_date_inc(date, inc):
     return date + timedelta(inc)
