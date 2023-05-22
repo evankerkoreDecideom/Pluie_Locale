@@ -1,3 +1,4 @@
+mkdir C:\\GitHub
 mkdir C:\\GitHub\\Pluie_Locale
 mkdir C:\\GitHub\\Pluie_Locale\\Secrets
 mkdir C:\\GitHub\\Pluie_Locale\\Data
