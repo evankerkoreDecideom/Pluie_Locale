@@ -6,6 +6,8 @@ Code/Set_Up.ps1
 
 Code/*.spec
 
+Code/dist/Set_Up.exe
+
 VirtualEnv/Include
 
 VirtualEnv/Lib
