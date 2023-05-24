@@ -2,6 +2,8 @@ Secrets
 
 Code/build
 
+Code/Set_Up.ps1
+
 Code/*.spec
 
 VirtualEnv/Include
