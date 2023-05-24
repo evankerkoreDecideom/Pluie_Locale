@@ -1,2 +1,0 @@
-﻿$dossier = (Get-ChildItem -path C:/Users -Recurse transco_user_personne.csv).DirectoryName
-Move-Item -Path ($dossier + "\\transco_user_personne.csv") -Destination "C:\\GitHub\\Pluie_Locale\\Data\\Cibles"
