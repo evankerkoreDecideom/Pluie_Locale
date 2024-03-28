@@ -7,9 +7,9 @@ Created on Thu May 25 09:09:55 2023
 
 import os
 import pandas
-import shutil
-import time
 from pathlib import Path
+
+
 
 # ============================================
 #   Récupérer des chemins et nom de fichiers
@@ -30,50 +30,26 @@ def get_value_from_df(dataframe, valeurCle):
 #   Récupérer une information contenu dans un fichier
 # =====================================================
 
-def get_one_data_from_file(path):
-    f=open(path, 'r')
-    data = f.readlines()[0]
-    f.close()
-    return data
+
 
 # ======================================
 #   Récupérer des fichiers téléchargés
 # ======================================
 
 def get_fullpath_downloaded_googlesheet():
-    liste = list(Path("C:/Users").glob("**/GoogleSheetID_a5q7y1p9k3.txt"))
-    if (len(liste) != 0):
-        return liste[0].__str__()
-    else:
-        return ""
+    return os.path.abspath("GoogleSheetID_a5q7y1p9k3.txt")
 
 def get_fullpath_downloaded_user():
-    liste = list(Path("C:/Users").glob("**/transco_user_personne_a5q7y1p9k3.csv"))
-    if (len(liste) != 0):
-        return liste[0].__str__()
-    else:
-        return ""
+    return os.path.abspath("transco_user_personne_a5q7y1p9k3.csv")
 
 def get_fullpath_downloaded_github():
-    liste = list(Path("C:/Users").glob("**/GitHub_a5q7y1p9k3.txt"))
-    if (len(liste) != 0):
-        return liste[0].__str__()
-    else:
-        return ""
+    return os.path.abspath("GitHub_a5q7y1p9k3.txt")
 
 def get_fullpath_downloaded_path():
-    liste = list(Path("C:/Users").glob("**/Path_a5q7y1p9k3.csv"))
-    if (len(liste) != 0):
-        return liste[0].__str__()
-    else:
-        return ""
+    return os.path.abspath("Path_a5q7y1p9k3.csv")
 
 def get_fullpath_downloaded_setup():
-    liste = list(Path("C:/Users").glob("**/Set_Up_a5q7y1p9k3.exe"))
-    if (len(liste) != 0):
-        return liste[0].__str__()
-    else:
-        return ""
+    return os.path.abspath("Set_Up_a5q7y1p9k3.exe")
 
 def move_files(filename_in, filename_out):
     os.rename(filename_in, filename_out)
@@ -89,14 +65,20 @@ fullpath_downloaded_github =    get_fullpath_downloaded_github()
 fullpath_downloaded_path =      get_fullpath_downloaded_path()
 fullpath_downloaded_setup =     get_fullpath_downloaded_setup()
 
+print("Chemin des fichiers téléchargés  --> done")
+
 # Récupération des données liées aux chemins
 
 df_path = get_df_from_csv(fullpath_downloaded_path)
 df_path_explicit = get_df_explicit(df_path)
 
+print("Données de paramétrage sur les chemins  --> done")
+
 # Variable contenant le chemin du dossier contenant le repository
 
 path_container_repository = get_value_from_df(df_path_explicit, "__GITHUB__")
+
+
 
 # Création du dossier qui va contenir le repository
 
@@ -140,3 +122,4 @@ move_files(fullpath_downloaded_setup,   path_file_setup)
 
 temporalite_exe = get_value_from_df(df_path_explicit, "p_dist") + get_value_from_df(df_path_explicit, "f_temporalite_exe")
 os.system(temporalite_exe)
+

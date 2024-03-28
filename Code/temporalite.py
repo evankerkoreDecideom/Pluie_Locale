@@ -5,24 +5,12 @@ Created on Fri May 19 09:36:08 2023
 @author: Decideom
 """
 
+import Tools.T_Dataframe as t_df
+import Classes.C_SetUp as c_su
 import pandas
 import datetime as dt
 from pathlib import Path
-
-# ============================================
-#   Récupérer des chemins et nom de fichiers
-# ============================================
-
-def get_df_from_csv(filename_csv):
-    return pandas.read_csv(filename_csv, sep=';')[["cle", "valeur"]]
-
-def get_df_explicit(dataframe):
-    return dataframe.apply(lambda x: x.replace(
-                            {'____':get_value_from_df(dataframe, "__GITHUB__")}
-                            ,regex=True))
-
-def get_value_from_df(dataframe, valeurCle):
-    return dataframe[dataframe.cle == valeurCle]["valeur"].iloc[0]
+import os
 
 # =========================================
 #   Manipulation des données de type date
@@ -73,10 +61,16 @@ date_debut = dt.datetime(2019,1,1,0,0,0)
 
 # Constitustion du chemin du fichier CSV
 
-df_path = get_df_from_csv(list(Path("C://").glob("**/Path.csv"))[0].__str__())
-df_path_explicit = get_df_explicit(df_path)
-path_csv_output = get_value_from_df(df_path_explicit, "p_cibles")  + get_value_from_df(df_path_explicit, "f_temporalite")
+df_path = t_df.get_df_from_csv(os.path.abspath("Path.csv"))
+print(df_path)
+print('')
+df_path_explicit = t_df.get_df_explicit(df_path)
+print(df_path_explicit)
+print('')
+path_csv_output = t_df.get_value_from_df(df_path_explicit, "p_cibles")  + t_df.get_value_from_df(df_path_explicit, "f_temporalite")
+print(path_csv_output)
+print('')
 
 # Création du fichier CSV
     
-main(date_debut, path_csv_output, nb_annee)
+#main(date_debut, path_csv_output, nb_annee)
