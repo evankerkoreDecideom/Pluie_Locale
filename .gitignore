@@ -4,6 +4,10 @@ Code/build
 
 Code/__pycache__
 
+Classes/__pycache__
+
+Tools/__pycache__
+
 Code/Set_Up.ps1
 
 Code/*.spec
@@ -16,8 +20,10 @@ VirtualEnv/Lib
 
 VirtualEnv/Scripts
 
-VirtualEnv/pyvenv.cfg
-
 *.csv
 
 *.cfg
+
+*.spec
+
+*.pyc
