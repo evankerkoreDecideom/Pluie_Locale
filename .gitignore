@@ -27,3 +27,5 @@ VirtualEnv/Scripts
 *.spec
 
 *.pyc
+
+*.log
