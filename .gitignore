@@ -1,31 +1,21 @@
 Secrets
 
-Code/build
-
-Code/__pycache__
-
 Classes/__pycache__
 
 Tools/__pycache__
 
 Code/Set_Up.ps1
-
 Code/*.spec
-
 Code/dist/Set_Up.exe
+Code/build
+Code/__pycache__
 
 VirtualEnv/Include
-
 VirtualEnv/Lib
-
 VirtualEnv/Scripts
 
 *.csv
-
 *.cfg
-
 *.spec
-
 *.pyc
-
 *.log
