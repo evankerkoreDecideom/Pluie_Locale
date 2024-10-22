@@ -121,15 +121,17 @@ class C_SetUp:
         self.set_fullpath_workspace_file_path()
         self.set_fullpath_workspace_file_setup()
 
+    def transferer_fichiers_logs_temporaire_vers_workspace(self):
+        TF.deplacer_fichiers(self.fullpath_downloads_folder_temp_log, self.fullpath_workspace_folder_logs, self.namefile_log_setup)
+
     def deplacer_et_renommer_fichiers_downloads_vers_workspace(self):
         TF.deplacer_et_renommer_fichiers(self.fullpath_downloaded_file_gs, self.fullpath_workspace_file_gs)
         TF.deplacer_et_renommer_fichiers(self.fullpath_downloaded_file_user, self.fullpath_workspace_file_user)
         TF.deplacer_et_renommer_fichiers(self.fullpath_downloaded_file_github, self.fullpath_workspace_file_github)
         TF.deplacer_et_renommer_fichiers(self.fullpath_downloaded_file_path, self.fullpath_workspace_file_path)
         TF.deplacer_et_renommer_fichiers(self.fullpath_downloaded_file_setup, self.fullpath_workspace_file_setup)
-
-    def transferer_fichiers_logs_temporaire_vers_workspace(self):
-        TF.deplacer_fichiers(self.fullpath_downloads_folder_temp_log, self.fullpath_workspace_folder_logs, self.namefile_log_setup)
+        self.transferer_fichiers_logs_temporaire_vers_workspace()
+        TF.supprimer_dossier_vide(self.fullpath_downloads_folder_temp_log)
 
     def supprimer_dossier_temporaire_log(self):
         TF.supprimer_dossier_vide(self.fullpath_downloads_folder_temp_log)
