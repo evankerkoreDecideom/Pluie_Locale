@@ -27,7 +27,7 @@ class C_SetUp:
         self.fullpath_workspace_file_github = ''
         self.fullpath_workspace_file_path = ''
         self.fullpath_workspace_file_setup = ''
-        self.namefile_log_setup = ''
+        self.namefile_log_setup = 'Set Up.log'
 
     #  1.   On vérifie que les fichiers sont bien présents dans le dossier téléchargement
 
@@ -56,9 +56,6 @@ class C_SetUp:
 
     def set_hyperlink_github(self):
         self.hyperlink_github = TD.get_value_from_df(self.list_parameters_clear, "v_link_github")
-
-    def set_namefile_log_setup(self):
-        self.namefile_log_setup = TD.get_value_from_df(self.list_parameters_clear, "f_log_su")
 
     def set_fullpath_workspace_folder_data(self):
         self.fullpath_workspace_folder_data = TD.get_value_from_df(self.list_parameters_clear, "p_data")
