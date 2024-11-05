@@ -79,7 +79,7 @@ class C_SetUp:
         self.fullpath_workspace_file_gs = self.fullpath_workspace_folder_secrets + TD.get_value_from_df(self.list_parameters_clear, "f_GS_ID")
 
     def set_fullpath_workspace_file_user(self):
-        self.fullpath_workspace_file_user = self.fullpath_workspace_folder_cible + TD.get_value_from_df(self.list_parameters_clear, "f_user")
+        self.fullpath_workspace_file_user = self.fullpath_workspace_folder_source + TD.get_value_from_df(self.list_parameters_clear, "f_user")
 
     def set_fullpath_workspace_file_github(self):
         self.fullpath_workspace_file_github = self.fullpath_workspace_folder_secrets + TD.get_value_from_df(self.list_parameters_clear, "f_github")
