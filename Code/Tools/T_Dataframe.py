@@ -10,3 +10,6 @@ def get_df_explicit(dataframe):
 
 def get_value_from_df(dataframe, valeurCle):
     return dataframe[dataframe.cle == valeurCle]["valeur"].iloc[0]
+
+def get_df_plus_constante(dataframe, constante):
+    return dataframe.insert(loc=1, column='trigramme', value=constante)
